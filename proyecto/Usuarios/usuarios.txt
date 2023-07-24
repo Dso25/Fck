@@ -1,0 +1,3 @@
+juan,juancito@test.com,4321
+Mar�a,maria@example.com,5678
+Pedro,pedro@example.com,abcd

@@ -1,0 +1,21 @@
+Nombre de la habitacion: testeo
+Nombre del dispositivo: esto no debe
+Estado: Apagado
+Hora de encendido: 14:50:00
+Hora de apagado: 23:59:00
+Días en que se repetirá el horario: domingo
+
+Nombre de la habitacion: testeo
+Nombre del dispositivo: de poder
+Estado: Apagado
+Hora de encendido: 14:50:00
+Hora de apagado: 23:59:00
+Días en que se repetirá el horario: domingo
+
+Nombre de la habitacion: testeo
+Nombre del dispositivo: leerse
+Estado: Apagado
+Hora de encendido: 14:50:00
+Hora de apagado: 23:59:00
+Días en que se repetirá el horario: domingo
+

@@ -1,0 +1,26 @@
+
+Nombre de la habitacion: helping room
+Nombre del dispositivo: tv
+Estado: Apagado
+Horario de encendido: No especificado
+Horario de apagado: No especificado
+Días en que se repetirá el horario: No especificado
+
+
+
+Nombre de la habitacion: helping room
+Nombre del dispositivo: ac
+Estado: Encendido
+Hora de encendido: 12:00:00
+Hora de apagado: 12:30:00
+Días en que se repetirá el horario: lunes, viernes, domingo
+
+
+Nombre de la habitacion: helping dressing room
+Nombre del dispositivo: refri
+Estado: Apagado
+Horario de encendido: No especificado
+Horario de apagado: No especificado
+Días en que se repetirá el horario: No especificado
+
+

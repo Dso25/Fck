@@ -1,0 +1,82 @@
+
+La Propiedad - Mi Habitación
+Nombre del dispositivo: esto no debe
+Estado: Apagado
+Hora de encendido: 14:50:00
+Hora de apagado: 23:59:00
+Días en que se repetirá el horario: domingo
+
+Mi Propiedad - La Habitación
+Nombre del dispositivo: de poder
+Estado: Apagado
+Hora de encendido: 14:50:00
+Hora de apagado: 23:59:00
+Días en que se repetirá el horario: domingo
+
+La Propiedad - La Habitación
+Nombre del dispositivo: leerse
+Estado: Apagado
+Hora de encendido: 14:50:00
+Hora de apagado: 23:59:00
+Días en que se repetirá el horario: domingo
+
+
+
+
+
+
+
+
+
+Mi Propiedad - Mi Habitación
+Nombre del dispositivo: una pruebita
+Estado: Apagado
+Horario de encendido: No especificado
+Horario de apagado: No especificado
+Días en que se repetirá el horario: No especificado
+
+
+
+cuarto 1
+Nombre del dispositivo: tv
+Estado: Apagado
+Horario de encendido: No especificado
+Horario de apagado: No especificado
+Días en que se repetirá el horario: No especificado
+
+
+
+cuarto 1
+Nombre del dispositivo: ac
+Estado: Encendido
+Hora de encendido: 16:30:00
+Hora de apagado: 19:00:00
+Días en que se repetirá el horario: martes, viernes, domingo
+
+
+cuarto 2
+Nombre del dispositivo: tv
+Estado: Apagado
+Horario de encendido: No especificado
+Horario de apagado: No especificado
+Días en que se repetirá el horario: No especificado
+
+
+
+cuarto 2
+Nombre del dispositivo: ac
+Estado: Apagado
+Horario de encendido: No especificado
+Horario de apagado: No especificado
+Días en que se repetirá el horario: No especificado
+
+
+
+cuarto 2
+Nombre del dispositivo: licuadora
+Estado: Encendido
+Horario de encendido: No especificado
+Horario de apagado: No especificado
+Días en que se repetirá el horario: No especificado
+
+
