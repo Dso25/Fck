@@ -1,0 +1,70 @@
+class Cerradura:
+    def __init__(self, nombre, estado, codigo_apertura):
+        self.nombre = nombre
+        self.estado = estado
+        self.codigo_apertura = codigo_apertura
+
+    def __str__(self):
+        return f"Cerradura: {self.nombre} - Estado: {self.estado}"
+
+def registrar_cerradura():
+    nombre = input("Ingrese el nombre de la cerradura: ")
+    estado = input("Ingrese el estado de la cerradura (abierto/cerrado): ")
+    codigo_apertura = input("Ingrese el código de apertura de la cerradura: ")
+    nueva_cerradura = Cerradura(nombre, estado, codigo_apertura)
+    return nueva_cerradura
+
+def buscar_cerradura(cerraduras, nombre):
+    for cerradura in cerraduras:
+        if cerradura.nombre == nombre:
+            return cerradura
+    return None
+
+def actualizar_pin(cerradura):
+    pin_actual = input("Ingrese el PIN actual: ")
+    if pin_actual == cerradura.codigo_apertura:
+        nuevo_pin = input("Ingrese el nuevo PIN: ")
+        cerradura.codigo_apertura = nuevo_pin
+        print("PIN actualizado exitosamente.")
+    else:
+        print("El PIN actual ingresado es incorrecto. No se puede actualizar el PIN.")
+
+def main():
+    cerraduras = []
+
+    while True:
+        print("\n--- Menú Principal ---")
+        print("1. Registrar cerradura")
+        print("2. Actualizar PIN")
+        print("3. Mostrar lista de cerraduras")
+        print("4. Salir")
+        opcion = int(input("Ingrese la opción deseada: "))
+
+        if opcion == 1:
+            nueva_cerradura = registrar_cerradura()
+            cerraduras.append(nueva_cerradura)
+            print("Cerradura registrada exitosamente.")
+
+        elif opcion == 2:
+            nombre_cerradura = input("Ingrese el nombre de la cerradura a actualizar: ")
+            cerradura_actualizar = buscar_cerradura(cerraduras, nombre_cerradura)
+
+            if cerradura_actualizar:
+                actualizar_pin(cerradura_actualizar)
+            else:
+                print("La cerradura no existe.")
+
+        elif opcion == 3:
+            if cerraduras:
+                print("--- Lista de Cerraduras ---")
+                for cerradura in cerraduras:
+                    print(cerradura)
+            else:
+                print("No hay cerraduras registradas.")
+
+        elif opcion == 4:
+            print("¡Hasta luego!")
+            break
+
+if __name__ == "__main__":
+    main()
