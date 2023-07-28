@@ -1,24 +1,24 @@
 
-La Propiedad - Mi HabitaciÛn
+La Propiedad - Mi Habitaci√≥n
 Nombre del dispositivo: esto no debe
 Estado: Apagado
 Hora de encendido: 14:50:00
 Hora de apagado: 23:59:00
-DÌas en que se repetir· el horario: domingo
+D√≠as en que se repetir√° el horario: domingo
 
-Mi Propiedad - La HabitaciÛn
+Mi Propiedad - La Habitaci√≥n
 Nombre del dispositivo: de poder
 Estado: Apagado
 Hora de encendido: 14:50:00
 Hora de apagado: 23:59:00
-DÌas en que se repetir· el horario: domingo
+D√≠as en que se repetir√° el horario: domingo
 
-La Propiedad - La HabitaciÛn
+La Propiedad - La Habitaci√≥n
 Nombre del dispositivo: leerse
 Estado: Apagado
 Hora de encendido: 14:50:00
 Hora de apagado: 23:59:00
-DÌas en que se repetir· el horario: domingo
+D√≠as en que se repetir√° el horario: domingo
 
 
 
@@ -26,14 +26,12 @@ DÌas en que se repetir· el horario: domingo
 
 
 
-
-
-Mi Propiedad - Mi HabitaciÛn
+Mi Propiedad - Mi Habitaci√≥n
 Nombre del dispositivo: una pruebita
 Estado: Apagado
 Horario de encendido: No especificado
 Horario de apagado: No especificado
-DÌas en que se repetir· el horario: No especificado
+D√≠as en que se repetir√° el horario: No especificado
 
 
 
@@ -42,7 +40,7 @@ Nombre del dispositivo: tv
 Estado: Apagado
 Horario de encendido: No especificado
 Horario de apagado: No especificado
-DÌas en que se repetir· el horario: No especificado
+D√≠as en que se repetir√° el horario: No especificado
 
 
 
@@ -51,7 +49,7 @@ Nombre del dispositivo: ac
 Estado: Encendido
 Hora de encendido: 16:30:00
 Hora de apagado: 19:00:00
-DÌas en que se repetir· el horario: martes, viernes, domingo
+D√≠as en que se repetir√° el horario: martes, viernes, domingo
 
 
 cuarto 2
@@ -59,7 +57,7 @@ Nombre del dispositivo: tv
 Estado: Apagado
 Horario de encendido: No especificado
 Horario de apagado: No especificado
-DÌas en que se repetir· el horario: No especificado
+D√≠as en que se repetir√° el horario: No especificado
 
 
 
@@ -68,7 +66,7 @@ Nombre del dispositivo: ac
 Estado: Apagado
 Horario de encendido: No especificado
 Horario de apagado: No especificado
-DÌas en que se repetir· el horario: No especificado
+D√≠as en que se repetir√° el horario: No especificado
 
 
 
@@ -77,6 +75,65 @@ Nombre del dispositivo: licuadora
 Estado: Encendido
 Horario de encendido: No especificado
 Horario de apagado: No especificado
-DÌas en que se repetir· el horario: No especificado
+D√≠as en que se repetir√° el horario: No especificado
 
+
+#Dispositivos por habitaci√≥n
+habitaciones = {
+    "cocina": [],
+    "cuarto principal": [],
+    "sala": [],
+}
+
+# Agregar un nuevo dispositivo a una habitaci√≥n
+def agregar_dispositivo(habitacion):
+    nombre = input("Ingrese el nombre del dispositivo: ")
+    estado = input("Ingrese el estado inicial (encendido o apagado): ").lower()
+    dispositivo = {"nombre": nombre, "estado": estado}
+
+    # Agregar la programaci√≥n autom√°tica, opcionalmente
+    programacion_automatica = input("¬øDesea configurar la programaci√≥n autom√°tica? (s√≠/no): ").lower()
+    if programacion_automatica == "s√≠":
+        dia = input("Ingrese el d√≠a de la programaci√≥n automatica (ejemplo: lunes, martes, etc.): ")
+        hora = input("Ingrese la hora para la programaci√≥n (ejemplo: 08:00): ")
+        dispositivo["programacion"] = {"dia": dia, "hora": hora}
+
+    habitaciones[habitacion].append(dispositivo)
+    print(f"Dispositivo '{nombre}' agregado a la habitaci√≥n '{habitacion}'.")
+
+# Mostrar los dispositivos de una habitaci√≥n
+def mostrar_dispositivos(habitacion):
+    dispositivos = habitaciones.get(habitacion)
+    if dispositivos:
+        print(f"Dispositivos en la habitaci√≥n '{habitacion}':")
+        for dispositivo in dispositivos:
+            print(f"Nombre: {dispositivo['nombre']}, Estado: {dispositivo['estado']}")
+            if "programacion" in dispositivo:
+                print(f"Programaci√≥n autom√°tica: {dispositivo['programacion']['dia']} a las {dispositivo['programacion']['hora']}")
+    else:
+        print(f"No hay dispositivos registrados en la habitaci√≥n '{habitacion}'.")
+
+# Uso:
+while True:
+    print("1. Agregar dispositivo")
+    print("2. Mostrar dispositivos de una habitaci√≥n")
+    print("3. Salir")
+    opcion = input("Seleccione una opci√≥n: ")
+
+    if opcion == "1":
+        habitacion = input("Ingrese la habitaci√≥n donde desea agregar el dispositivo: ").lower()
+        if habitacion in habitaciones:
+            agregar_dispositivo(habitacion)
+        else:
+            print("Habitaci√≥n incorrecta. Intente nuevamente.")
+    elif opcion == "2":
+        habitacion = input("Ingrese la habitaci√≥n que quiere ver: ").lower()
+        if habitacion in habitaciones:
+            mostrar_dispositivos(habitacion)
+        else:
+            print("Habitaci√≥n incorrecta. Intente nuevamente.")
+    elif opcion == "3":
+        break
+    else:
+        print("Opci√≥n incorrecta. Intente nuevamente.")
 
