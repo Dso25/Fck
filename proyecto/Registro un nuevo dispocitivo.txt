@@ -1,0 +1,59 @@
+#Dispositivos por habitación
+habitaciones = {
+    "cocina": [],
+    "cuarto principal": [],
+    "sala": [],
+}
+
+# Agregar un nuevo dispositivo a una habitación
+def agregar_dispositivo(habitacion):
+    nombre = input("Ingrese el nombre del dispositivo: ")
+    estado = input("Ingrese el estado inicial (encendido o apagado): ").lower()
+    dispositivo = {"nombre": nombre, "estado": estado}
+
+    # Agregar la programación automática, opcionalmente
+    programacion_automatica = input("¿Desea configurar la programación automática? (sí/no): ").lower()
+    if programacion_automatica == "sí":
+        dia = input("Ingrese el día de la programación automatica (ejemplo: lunes, martes, etc.): ")
+        hora = input("Ingrese la hora para la programación (ejemplo: 08:00): ")
+        dispositivo["programacion"] = {"dia": dia, "hora": hora}
+
+    habitaciones[habitacion].append(dispositivo)
+    print(f"Dispositivo '{nombre}' agregado a la habitación '{habitacion}'.")
+
+# Mostrar los dispositivos de una habitación
+def mostrar_dispositivos(habitacion):
+    dispositivos = habitaciones.get(habitacion)
+    if dispositivos:
+        print(f"Dispositivos en la habitación '{habitacion}':")
+        for dispositivo in dispositivos:
+            print(f"Nombre: {dispositivo['nombre']}, Estado: {dispositivo['estado']}")
+            if "programacion" in dispositivo:
+                print(f"Programación automática: {dispositivo['programacion']['dia']} a las {dispositivo['programacion']['hora']}")
+    else:
+        print(f"No hay dispositivos registrados en la habitación '{habitacion}'.")
+
+# Uso:
+while True:
+    print("1. Agregar dispositivo")
+    print("2. Mostrar dispositivos de una habitación")
+    print("3. Salir")
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        habitacion = input("Ingrese la habitación donde desea agregar el dispositivo: ").lower()
+        if habitacion in habitaciones:
+            agregar_dispositivo(habitacion)
+        else:
+            print("Habitación incorrecta. Intente nuevamente.")
+    elif opcion == "2":
+        habitacion = input("Ingrese la habitación que quiere ver: ").lower()
+        if habitacion in habitaciones:
+            mostrar_dispositivos(habitacion)
+        else:
+            print("Habitación incorrecta. Intente nuevamente.")
+    elif opcion == "3":
+        break
+    else:
+        print("Opción incorrecta. Intente nuevamente.")
+
