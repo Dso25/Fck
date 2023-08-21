@@ -1,0 +1,34 @@
+import pickle
+
+class Dispositivo:
+    def __init__(self, nombre, estado):
+        self.nombre = nombre
+        self.estado = estado
+
+# Simulación de dispositivos
+dispositivos = [
+    Dispositivo("Dispositivo1", True),
+    Dispositivo("Dispositivo2", False),
+    Dispositivo("Dispositivo3", True)
+]
+
+# Función para guardar el estado de los dispositivos en un archivo
+def guardar_estado(dispositivos, archivo):
+    with open(archivo, 'wb') as f:
+        pickle.dump(dispositivos, f)
+
+# Función para cargar el estado de los dispositivos desde un archivo
+def cargar_estado(archivo):
+    with open(archivo, 'rb') as f:
+        return pickle.load(f)
+
+# Guardar el estado inicial de los dispositivos en un archivo
+guardar_estado(dispositivos, 'estado_dispositivos.pkl')
+
+# Cargar el estado de los dispositivos desde el archivo
+dispositivos_cargados = cargar_estado('estado_dispositivos.pkl')
+
+# Mostrar el estado de los dispositivos cargados
+for dispositivo in dispositivos_cargados:
+    print(f"Nombre: {dispositivo.nombre}, Estado: {dispositivo.estado}")
+
